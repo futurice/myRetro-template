@@ -1,0 +1,36 @@
+name: MyRetro
+on: [push]
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Download myRetro generator
+        run: |
+          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.1/generator-Linux.zip
+          unzip generator-Linux.zip
+          chmod +x ./myRetroGenerator
+
+      - name: Generate site
+        run: |
+          ./myRetroGenerator MyRetro.md -o docs/build/index.html
+          cp -r static/ docs/
+
+      - name: Store site
+        uses: actions/upload-artifact@v1
+        with:
+          name: myRetro
+          path: docs
+
+      - name: Push to github pages
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        uses: peaceiris/actions-gh-pages@v3
+        if: env.ACTIONS_DEPLOY_KEY != ''
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs
