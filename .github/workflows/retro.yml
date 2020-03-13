@@ -11,7 +11,7 @@ jobs:
 
       - name: Download myRetro generator
         run: |
-          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.2/generator-Linux.zip
+          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.3/generator-Linux.zip
           unzip generator-Linux.zip
           chmod +x ./myRetroGenerator
 
