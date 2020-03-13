@@ -11,14 +11,12 @@ jobs:
 
       - name: Download myRetro generator
         run: |
-          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.1/generator-Linux.zip
+          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.2/generator-Linux.zip
           unzip generator-Linux.zip
           chmod +x ./myRetroGenerator
 
       - name: Generate site
-        run: |
-          ./myRetroGenerator MyRetro.md -o docs/build/index.html
-          cp -r static/ docs/
+        run: ./myRetroGenerator MyRetro.md -o docs
 
       - name: Store site
         uses: actions/upload-artifact@v1
