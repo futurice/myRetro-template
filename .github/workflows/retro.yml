@@ -16,7 +16,9 @@ jobs:
           chmod +x ./myRetroGenerator
 
       - name: Generate site and pdf version
-        run: make all
+        run: |
+          sudo npm i -g browser-sync
+          make all
 
       - name: Store site
         uses: actions/upload-artifact@v1
