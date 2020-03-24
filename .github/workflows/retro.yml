@@ -11,20 +11,12 @@ jobs:
 
       - name: Download myRetro generator
         run: |
-          wget https://github.com/futurice/myRetroGenerator/releases/download/v1.3/generator-Linux.zip
+          wget https://github.com/futurice/myRetroGenerator/releases/latest/download/generator-Linux.zip
           unzip generator-Linux.zip
           chmod +x ./myRetroGenerator
 
-      - name: Generate site
-        run: ./myRetroGenerator MyRetro.md -o docs
-
-      - name: Generate pdf version
-        run: |
-          sudo npm i -g browser-sync
-          cd docs
-          browser-sync start --server --no-open &
-          sleep 2
-          google-chrome --headless --disable-gpu --print-to-pdf=myRetro.pdf http://localhost:3000
+      - name: Generate site and pdf version
+        run: make all
 
       - name: Store site
         uses: actions/upload-artifact@v1
