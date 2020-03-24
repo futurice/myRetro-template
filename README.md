@@ -34,3 +34,15 @@ This repo contains a [`Makefile`](./Makefile) with three targets:
 ## Rename the retro markdown
 
 To rename the retro file (e.g. to use it as a README.md instead of these instructions), you just have to update the `RETRO` variable in the `Makefile`. The CI will continue to work.
+
+## Update your own repo with changes from this template
+
+To bring your own repo up to date with the latest version of the template run:
+
+```
+git remote add template https://github.com/futurice/myRetro-template.git
+git fetch template
+git rebase template/master
+```
+
+Then you have to fix the merge conflicts. After the rebase is completed, push your changes with `git push --force` and you are up to date!
