@@ -23,9 +23,14 @@ Lastly go to `Settings`, scroll down to `GitHub Pages` and select the `gh-pages`
 ## Develop locally
 
 Download the [latest release binaries](https://github.com/futurice/myRetroGenerator/releases/latest/) and unzip them in this folder.
+Run `chmod +x ./myRetroGenerator` to make it executable.
 
-The zip contains a [`Makefile`](https://github.com/futurice/myRetroGenerator/blob/master/Makefile) with three targets:
+This repo contains a [`Makefile`](./Makefile) with three targets:
 
 - `make html` will build the static website and put it into the `docs/` folder by default. This folder is already gitignore'd. For this you only need `make` installed
 - `make pdf` will build the website and generate a pdf version of it. This need `google-chrome`, `browser-sync` and `make`. You can install `browser-sync` with `npm install --global browser-sync`.
 - `make watch` will watch the Retro markdown for changes and rebuild the static site as well as reload the browser. This needs `browser-sync`, `inotify-tools` on Linux and `fswatch` on Mac.
+
+## Rename the retro markdown
+
+To rename the retro file (e.g. to use it as a README.md instead of these instructions), you just have to update the `RETRO` variable in the `Makefile`. The CI will continue to work.

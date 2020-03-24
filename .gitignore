@@ -1,6 +1,6 @@
 static/
 template/
 docs/
+.shake/
 
 myRetroGenerator
-Makefile
