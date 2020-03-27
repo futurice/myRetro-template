@@ -42,7 +42,7 @@ To bring your own repo up to date with the latest version of the template run:
 ```
 git remote add template https://github.com/futurice/myRetro-template.git
 git fetch template
-git rebase template/master
+git merge template/master
 ```
 
 Then you have to fix the merge conflicts. After the rebase is completed, push your changes with `git push --force` and you are up to date!
