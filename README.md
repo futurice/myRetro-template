@@ -4,7 +4,7 @@
 
 This is a template repository for your own myRetro.
 
-All the places where you should write text are marked in the example [MyRetro](./MyRetro.md).
+All the places where you should write text are marked in the example [MyRetro](./MyRetro.md). Writing in other places will most likely lead to parsing errors.
 
 ## Set up for yourself
 
