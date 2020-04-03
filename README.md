@@ -4,6 +4,8 @@
 
 This is a template repository for your own myRetro.
 
+All the places where you should write text are marked in the example [MyRetro](./MyRetro.md).
+
 ## Set up for yourself
 
 Use the green `Use this template` to create your own copy of the repository in your personal github account. It can either be public or private, depending on how you would like it, both work equally good.
